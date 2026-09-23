@@ -4,11 +4,11 @@ vibversion: 1.0.7
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/gnome:latest # Optionally, Replace this image URL with a different one i.e. gnome-nvidia:latest, etc
+  base: ghcr.io/vanilla-os/pico:latest # Optionally, Replace this image URL with a different one i.e. gnome-nvidia:latest, etc
   addincludes: true
   singlelayer: false
   labels:
-    maintainer: self-maintained # Optionally, Replace this with your name
+    maintainer: domesya # Optionally, Replace this with your name
   args:
     DEBIAN_FRONTEND: noninteractive # Set the image environment as non-interactive
 
