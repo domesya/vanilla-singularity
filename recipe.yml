@@ -4,7 +4,7 @@ vibversion: 1.0.7
 
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/pico:latest # Optionally, Replace this image URL with a different one i.e. gnome-nvidia:latest, etc
+  base: ghcr.io/vanilla-os/core:latest # Optionally, Replace this image URL with a different one i.e. gnome-nvidia:latest, etc
   addincludes: true
   singlelayer: false
   labels:
