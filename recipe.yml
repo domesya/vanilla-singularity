@@ -1,5 +1,5 @@
-name: Custom Vanilla Desktop # Replace this name with your image name
-id: custom # Replace this ID with your image ID
+name: Vanilla with Singularity Desktop # Replace this name with your image name
+id: vanillaos-singularity # Replace this ID with your image ID
 vibversion: 1.0.7
 
 stages:
