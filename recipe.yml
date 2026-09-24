@@ -100,24 +100,19 @@ stages:
       - modules/997-misc-setup.yml
       - modules/999-cleanup.yml
 
-  - name: cleanup
+  
+  - name: cleanup-and-sysconf-setup
     type: shell
     commands:
-    - apt-get autoremove -y
-    - apt-get clean
+    - apt autoremove -y
+    - apt clean
     - lpkg --lock
-
-  - name: cleanup2
-    type: shell
-    commands:
-    - rm -rf /tmp/*
-    - rm -rf /var/tmp/*
     - rsync -a /etc/ /sysconf/
     cleanup:
     - /sysconf/resolv.conf
-
-  - id: initrd
-    base: build
-    runs:
-      commands:
-      - touch $(readlink -f /initrd.img)
+  
+- id: initrd
+  base: build
+  runs:
+    commands:
+    - touch $(readlink -f /initrd.img)
