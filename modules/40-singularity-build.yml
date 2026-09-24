@@ -8,8 +8,8 @@ commands:
   - meson setup /tmp/singularity-desktop/subprojects/labwc/build /tmp/singularity-desktop/subprojects/labwc --prefix=/opt/singularity --libdir=lib --buildtype=release -Dxwayland=enabled --force-fallback-for=wlroots-0.20
   - meson compile -C /tmp/singularity-desktop/subprojects/labwc/build
   - DESTDIR=/ meson install -C /tmp/singularity-desktop/subprojects/labwc/build
-  - glib-compile-schemas /opt/singularity/share/glib-2.0/schemas || true
-  - glib-compile-schemas /usr/share/glib-2.0/schemas || true
+  - glib-compile-schemas /opt/singularity/share/glib-2.0/schemas 
+  - glib-compile-schemas /usr/share/glib-2.0/schemas
   - rm -rf /tmp/singularity-desktop
-  - ls -lh /opt/singularity/bin/singularity-labwc-session /opt/singularity/bin/singularity-session || true
-  - ldd /opt/singularity/bin/singularity-labwc-session | head -n 50 || true
+  - ls -lh /opt/singularity/bin/singularity-labwc-session /opt/singularity/bin/singularity-session 
+  - ldd /opt/singularity/bin/singularity-labwc-session 

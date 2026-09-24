@@ -16,7 +16,6 @@ stages:
   runs:
     commands:
       - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
-
   cleanup:
     - /boot/initrd.img*
     - /tmp/*
