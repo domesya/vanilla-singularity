@@ -9,9 +9,9 @@ sources:
     url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-arm64.tar.gz
     checksum: e59b098338de6f6071376e07ec79b17be6c8f0a0dd354fab128e1e86a36d0862
     only-arches: [arm64]
-    commands:
-    - mkdir -p /usr/bin
-    - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/lpkg /usr/bin/lpkg
-    - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/cur-gpu /usr/bin/cur-gpu
-    - chmod +x /usr/bin/lpkg
-    - chmod +x /usr/bin/cur-gpu
+commands:
+  - mkdir -p /usr/bin
+  - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/lpkg /usr/bin/lpkg
+  - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/cur-gpu /usr/bin/cur-gpu
+  - chmod +x /usr/bin/lpkg
+  - chmod +x /usr/bin/cur-gpu
