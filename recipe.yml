@@ -24,31 +24,18 @@ stages:
     - lpkg --unlock
     - apt-get update
 
-  # Put your custom actions below this comment
+  # Singularity Desktop - build from source (master, full suite, /opt/singularity, GDM kept, GNOME removed)
 
-  - name: example-packages # Sample module using the built-in Apt module to install packages
-    type: apt
-    sources:
-      - packages:
-        - vim
-
-  - name: example-commands # Sample module demonstrating the Shell module with custom commands
-    type: shell
-    commands:
-    - echo Example output
-
-  - name: example-modules # Sample module demonstrating importing local and remote modules
+  - name: modules
     type: includes
     includes:
-      - modules/50-install-debs.yml # Sample local module present in this repository
-      # - gh:vanilla-os/dev-image:main:modules/00-basics.yml # Sample GitHub remote module in the format: `gh:your-name/your-repo:branch:modules/file.yml`
-      # - https://raw.githubusercontent.com/Vanilla-OS/dev-image/main/modules/05-go.yml # Sample full URL remote module
-
-  # Put your custom actions above this comment
-
-  - name: set-image-name-abroot
-    type: includes
-    includes:
+      - modules/10-singularity-build-deps.yml
+      - modules/20-singularity-runtime-deps.yml
+      - modules/23-remove-gnome.yml
+      - modules/30-singularity-vetro.yml
+      - modules/40-singularity-build.yml
+      - modules/50-singularity-session.yml
+      - modules/50-install-debs.yml
       - modules/80-set-image-abroot-config.yml
 
   - name: cleanup

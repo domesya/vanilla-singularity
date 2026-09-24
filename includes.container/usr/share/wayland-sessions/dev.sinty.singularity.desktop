@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Singularity Desktop
+Comment=Singularity Desktop Environment (Wayland, labwc)
+Exec=/opt/singularity/bin/singularity-labwc-session
+Type=Application
+DesktopNames=singularity;GNOME;
