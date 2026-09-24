@@ -26,9 +26,9 @@ modules:
 - name: vso-extra-setup
   type: shell
   commands:
-  - chmod +x /usr/bin/setup-vso-terminal
-  - chmod +x /usr/bin/reset-vso
-  - chmod +x /usr/share/vso/scripts/*
+  - test -f /usr/bin/setup-vso-terminal && chmod +x /usr/bin/setup-vso-terminal || true
+  - test -f /usr/bin/reset-vso && chmod +x /usr/bin/reset-vso || true
+  - test -d /usr/share/vso/scripts && chmod +x /usr/share/vso/scripts/* || true
 
 - name: vso-gnome-ext
   type: shell
