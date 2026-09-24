@@ -65,7 +65,6 @@ stages:
       - chmod +x /usr/bin/cur-gpu
     
 
-  # Singularity Desktop - build from source (master, full suite, /opt/singularity, GDM kept, GNOME removed)
 
   - name: modules
     type: includes
