@@ -70,14 +70,14 @@ stages:
     includes:
       - modules/00-vanilla-desktop-base.yml
       - modules/00-vanilla-backgrounds.yml
-      - modules/00-vanilla-migration.yml
-      - modules/00-vanilla-system-operator.yml
-      - modules/00-vanilla-sideload.yml
       - modules/00-vanilla-first-setup.yml
-      - modules/00-vanilla-prime-utility.yml
-      - modules/00-vanilla-updates-utility.yml
-      - modules/03-fswarn.yml
+      - modules/00-vanilla-system-operator.yml
       - modules/00-vanilla-apx-wrapper.yml
+      - modules/00-vanilla-sideload.yml
+      - modules/00-vanilla-updates-utility.yml
+      - modules/00-vanilla-prime-utility.yml
+      - modules/00-vanilla-migration.yml
+      - modules/03-fswarn.yml
       - modules/10-vanilla-abroot-rollback-notifier.yml
       - modules/10-singularity-build-deps.yml
       - modules/18-libs-extra.yml
