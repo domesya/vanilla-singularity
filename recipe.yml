@@ -35,6 +35,15 @@ stages:
     #   commands:
     #   - lpkg --unlock
     #   - apt-get update
+    - name: init-setup
+      type: shell
+      commands:
+      - echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment
+      - sed -i '4,10d' /etc/profile
+      - apt update
+      - apt clean
+      - apt-mark hold snapd gnome-software-plugin-snap
+      - apt -y install squashfs-tools minisign
 
 
   - name: vanilla-tools
