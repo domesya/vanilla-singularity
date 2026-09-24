@@ -17,6 +17,26 @@ stages:
     commands:
       - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
 
+  cleanup:
+    - /boot/initrd.img*
+    - /tmp/*
+    - /var/cache/apt/pkgcache.bin
+    - /var/cache/debconf
+    - /var/cache/dictionaries-common
+    - /var/cache/fontconfig
+    - /var/cache/ldconfig
+    - /var/cache/man
+    - /var/lib/dbus/machine-id
+    - /var/log/*
+    
+  modules:
+    # - name: init-setup
+    #   type: shell
+    #   commands:
+    #   - lpkg --unlock
+    #   - apt-get update
+
+
   - name: vanilla-tools
     type: shell
     sources:
@@ -35,12 +55,6 @@ stages:
     - chmod +x /usr/bin/lpkg
     - chmod +x /usr/bin/cur-gpu
     
-  # modules:
-  # - name: init-setup
-  #   type: shell
-  #   commands:
-  #   - lpkg --unlock
-  #   - apt-get update
 
   # Singularity Desktop - build from source (master, full suite, /opt/singularity, GDM kept, GNOME removed)
 
