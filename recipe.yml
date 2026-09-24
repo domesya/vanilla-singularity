@@ -35,28 +35,28 @@ stages:
     #   commands:
     #   - lpkg --unlock
     #   - apt-get update
-    - name: init-setup
-      type: shell
-      commands:
-      - echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment
-      - sed -i '4,10d' /etc/profile
-      - apt update
-      - apt clean
-      - apt-mark hold snapd gnome-software-plugin-snap
-      - apt -y install squashfs-tools minisign
+  - name: init-setup
+    type: shell
+    commands:
+    - echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment
+    - sed -i '4,10d' /etc/profile
+    - apt update
+    - apt clean
+    - apt-mark hold snapd gnome-software-plugin-snap
+    - apt -y install squashfs-tools minisign
 
 
-    - name: vanilla-tools
-      type: shell
-      sources:
-        - type: tar
-          url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-amd64.tar.gz
-          checksum: aef32f07820e0993e534e6bccfa1a6daae6c8c6f0543d3e073f4f121f2ef2e31
-          only-arches: [amd64]
-        - type: tar
-          url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-arm64.tar.gz
-          checksum: e59b098338de6f6071376e07ec79b17be6c8f0a0dd354fab128e1e86a36d0862
-          only-arches: [arm64]
+  - name: vanilla-tools
+    type: shell
+    sources:
+    - type: tar
+      url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-amd64.tar.gz
+      checksum: aef32f07820e0993e534e6bccfa1a6daae6c8c6f0543d3e073f4f121f2ef2e31
+      only-arches: [amd64]
+    - type: tar
+      url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-arm64.tar.gz
+      checksum: e59b098338de6f6071376e07ec79b17be6c8f0a0dd354fab128e1e86a36d0862
+      only-arches: [arm64]
       commands:
       - mkdir -p /usr/bin
       - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/lpkg /usr/bin/lpkg
@@ -111,9 +111,9 @@ stages:
   - name: cleanup2
     type: shell
     commands:
-      - rm -rf /tmp/*
-      - rm -rf /var/tmp/*
-      - rsync -a /etc/ /sysconf/
+    - rm -rf /tmp/*
+    - rm -rf /var/tmp/*
+    - rsync -a /etc/ /sysconf/
     cleanup:
     - /sysconf/resolv.conf
 
@@ -121,4 +121,4 @@ stages:
     base: build
     runs:
       commands:
-        - touch $(readlink -f /initrd.img)
+      - touch $(readlink -f /initrd.img)
