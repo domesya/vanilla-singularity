@@ -4,8 +4,6 @@ commands:
   - mkdir -p /usr/share/wayland-sessions /etc/environment.d /etc/gdm3
   - sed -i 's/#WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
   - sed -i 's/WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
-  - echo "Session file created:" && cat /usr/share/wayland-sessions/dev.sinty.singularity.desktop
-  - echo "Env file created:" && cat /etc/environment.d/99-singularity.conf
   - apt-get install -y --no-install-recommends qt6-xdgdesktopportal-platformtheme appmenu-gtk2-module || echo "optional Qt/appmenu packages not available, continuing"
   - update-desktop-database /usr/share/applications || true
   - update-desktop-database /opt/singularity/share/applications || true
