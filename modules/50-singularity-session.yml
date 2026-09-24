@@ -2,22 +2,6 @@ name: singularity-session
 type: shell
 commands:
   - mkdir -p /usr/share/wayland-sessions /etc/environment.d /etc/gdm3
-  - |
-    cat > /usr/share/wayland-sessions/dev.sinty.singularity.desktop <<'EOF'
-    [Desktop Entry]
-    Name=Singularity Desktop
-    Comment=Singularity Desktop Environment (Wayland, labwc)
-    Exec=/opt/singularity/bin/singularity-labwc-session
-    Type=Application
-    DesktopNames=singularity;GNOME;
-    EOF
-  - |
-    cat > /etc/environment.d/99-singularity.conf <<'EOF'
-    PATH=/opt/singularity/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-    LD_LIBRARY_PATH=/opt/singularity/lib
-    XDG_DATA_DIRS=/opt/singularity/share:/usr/local/share:/usr/share
-    XDG_CONFIG_DIRS=/opt/singularity/etc/xdg:/etc/xdg
-    EOF
   - sed -i 's/#WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
   - sed -i 's/WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
   - echo "Session file created:" && cat /usr/share/wayland-sessions/dev.sinty.singularity.desktop
