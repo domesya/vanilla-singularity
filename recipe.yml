@@ -17,26 +17,67 @@ stages:
     commands:
       - echo 'APT::Install-Recommends "1";' > /etc/apt/apt.conf.d/01norecommends
 
-  modules:
-  - name: init-setup
+  - name: vanilla-tools
     type: shell
+    sources:
+      - type: tar
+        url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-amd64.tar.gz
+        checksum: aef32f07820e0993e534e6bccfa1a6daae6c8c6f0543d3e073f4f121f2ef2e31
+        only-arches: [amd64]
+      - type: tar
+        url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/v1.0.1/vanilla-tools-arm64.tar.gz
+        checksum: e59b098338de6f6071376e07ec79b17be6c8f0a0dd354fab128e1e86a36d0862
+        only-arches: [arm64]
     commands:
-    - lpkg --unlock
-    - apt-get update
+    - mkdir -p /usr/bin
+    - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/lpkg /usr/bin/lpkg
+    - cp /sources/vanilla-tools/vanilla-tools*/vanilla-tools/cur-gpu /usr/bin/cur-gpu
+    - chmod +x /usr/bin/lpkg
+    - chmod +x /usr/bin/cur-gpu
+    
+  # modules:
+  # - name: init-setup
+  #   type: shell
+  #   commands:
+  #   - lpkg --unlock
+  #   - apt-get update
 
   # Singularity Desktop - build from source (master, full suite, /opt/singularity, GDM kept, GNOME removed)
 
   - name: modules
     type: includes
     includes:
+      - modules/00-vanilla-apx-wrapper.yml
+      - modules/00-vanilla-backgrounds.yml
+      - modules/00-vanilla-desktop-base.yml
+      - modules/00-vanilla-first-setup.yml
+      - modules/00-vanilla-migration.yml
+      - modules/00-vanilla-prime-utility.yml
+      - modules/00-vanilla-sideload.yml
+      - modules/00-vanilla-system-operator.yml
+      - modules/00-vanilla-updates-utility.yml
+      - modules/03-fswarn.yml
+      - modules/10-vanilla-abroot-rollback-notifier.yml
       - modules/10-singularity-build-deps.yml
+      - modules/18-libs-extra.yml
       - modules/20-singularity-runtime-deps.yml
       - modules/23-remove-gnome.yml
       - modules/30-singularity-vetro.yml
       - modules/40-singularity-build.yml
-      - modules/50-singularity-session.yml
       - modules/50-install-debs.yml
+      - modules/50-singularity-session.yml
+      - modules/50-laptop-goodies.yml
+      - modules/60-media.yml
+      - modules/80-printers.yml
       - modules/80-set-image-abroot-config.yml
+      - modules/100-accessibility.yml
+      - modules/110-fonts.yml
+      - modules/130-plymouth.yml
+      - modules/131-plymouth-theme-vanilla.yml
+      - modules/140-password.yml
+      - modules/160-utilities.yml
+      - modules/997-misc-setup.yml
+      - modules/999-cleanup.yml
 
   - name: cleanup
     type: shell
