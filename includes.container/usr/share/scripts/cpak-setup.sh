@@ -20,5 +20,5 @@ curl -fsSL "${CURL_RETRY[@]}" -o /tmp/cpak-SHA256SUMS "${CPAK_BASE}/SHA256SUMS"
 
 install -Dm755 /tmp/cpak-linux-$arch /usr/bin/cpak
 install -Dm755 /tmp/cpak-storaged-linux-$arch /usr/bin/cpak-storaged
-rm -f /tmp/cpak-linux-amd64 /tmp/cpak-storaged-linux-amd64 /tmp/cpak-SHA256SUMS
+rm -f /tmp/cpak-linux-$arch /tmp/cpak-storaged-linux-$arch /tmp/cpak-SHA256SUMS
 
