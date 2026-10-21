@@ -1,9 +1,0 @@
-name: singularity-session
-type: shell
-commands:
-  - mkdir -p /usr/share/wayland-sessions /etc/environment.d /etc/gdm3
-  - sed -i 's/#WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
-  - sed -i 's/WaylandEnable=false/WaylandEnable=true/' /etc/gdm3/custom.conf || true
-  - apt-get install -y --no-install-recommends qt6-xdgdesktopportal-platformtheme appmenu-gtk2-module || echo "optional Qt/appmenu packages not available, continuing"
-  - update-desktop-database /usr/share/applications || true
-  - update-desktop-database /opt/singularity/share/applications || true

@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  CUSTOM_IMAGE_NAME: vanillaos-singularity
+  CUSTOM_IMAGE_NAME: vanillaos-minimal
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:

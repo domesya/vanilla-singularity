@@ -1,0 +1,9 @@
+name: extra-goodies
+type: apt
+sources:
+  - packages:
+      - eza
+      - oomd
+      - tmux
+      - dash
+

@@ -1,0 +1,5 @@
+name: install-cpak
+type: shell
+commands:
+  - chmod +x /usr/share/scripts/cpak-setup.sh
+  - bash /usr/share/scripts/cpak-setup.sh
