@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+ARCH="${ARCH:-$(uname -m)}"
+
 case "$ARCH" in 
     amd64) arch=amd64; SHA256_SUM="b653a4b1b75a31a8a00a5d12b11eaafa3f22d6cf2b3417efde68a113b4c60700"
         ;;

@@ -12,3 +12,5 @@ commands:
   - meson setup subprojects/labwc/build subprojects/labwc --prefix=/usr --libdir=lib --buildtype=release -Dxwayland=enabled --force-fallback-for=wlroots-0.20
   - ninja -C subprojects/labwc/build
   - ninja -C subprojects/labwc/build install
+cleanup:
+  - /usr/bin/vetro
