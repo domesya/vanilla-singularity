@@ -1,0 +1,10 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "singularity-labwc-session"
+user = "greeter"
+
+[initial_session]
+command = "vanilla-first-setup"
+user = "vanilla"
