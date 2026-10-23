@@ -9,7 +9,7 @@ commands:
   - meson setup build --prefix=/usr -Dapps=core -Dinstaller=false
   - ninja -C build
   - ninja -C build install
-  - meson setup subprojects/labwc/build subprojects/labwc --prefix=/usr --libdir=lib --buildtype=release -Dxwayland=enabled --force-fallback-for=wlroots-0.20
+  - meson setup subprojects/labwc/build subprojects/labwc --prefix=/usr --libdir=lib --buildtype=release -Dxwayland=enabled --force-fallback-for=wlroots
   - ninja -C subprojects/labwc/build
   - ninja -C subprojects/labwc/build install
 cleanup:
