@@ -1,0 +1,8 @@
+[Unit]
+Description=ABRoot Rollback Notifier
+
+[Service]
+ExecStart=/usr/bin/abroot-rollback-notifier
+
+[Install]
+WantedBy=multi-user.target
