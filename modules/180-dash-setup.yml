@@ -1,4 +1,0 @@
-name: dash-setup
-type: shell
-commands:
-  - ln -sfT dash /usr/bin/sh

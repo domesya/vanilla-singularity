@@ -3,5 +3,7 @@ type: shell
 commands:
   - mkdir -p /usr/lib/systemd/system/multi-user.target.wants/
   - mkdir -p /usr/lib/systemd/user/graphical-session-pre.target.wants/
+  - chmod 755 /usr/libexec/abroot-image-migration
+  - chmod 755 /usr/libexec/apx-and-first-setup-migration
   - ln -s /usr/lib/systemd/system/abroot-image-migration.service /usr/lib/systemd/system/multi-user.target.wants/
   - ln -s /usr/lib/systemd/user/apx-and-first-setup-migration.service /usr/lib/systemd/user/graphical-session-pre.target.wants/

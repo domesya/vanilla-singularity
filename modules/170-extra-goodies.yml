@@ -6,4 +6,5 @@ sources:
       - oomd
       - tmux
       - dash
+      - network-manager-gnome
       - zoxide
