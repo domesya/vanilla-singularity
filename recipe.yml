@@ -1,5 +1,5 @@
-name: Vanilla Minimal # Replace this name with your image name
-id: vanillaos-minimal # Replace this ID with your image ID
+name: Vanilla Singularity # Replace this name with your image name
+id: vanilla-singularity # Replace this ID with your image ID
 vibversion: 1.0.7
 stages:
   - id: build
@@ -72,7 +72,9 @@ stages:
           - modules/00-vanilla-migration.yml
           - modules/03-fswarn.yml
           - modules/10-vanilla-abroot-rollback-notifier.yml
-          - modules/15-xfce-setup.yml
+          - modules/13-singularity-deps.yml 
+          - modules/14-get-vetro.yml
+          - modules/15-singularity-setup.yml
           - modules/18-libs-extra.yml
           - modules/20-first-setup-user.yml
           - modules/20-install-cpak.yml

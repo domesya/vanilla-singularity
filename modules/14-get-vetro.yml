@@ -1,0 +1,5 @@
+name: vetro
+type: shell
+commands:
+  - bash /usr/share/scripts/get-vetro.sh
+

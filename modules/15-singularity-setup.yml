@@ -1,0 +1,14 @@
+name: singularity-desktop
+type: shell
+sources:
+  - type: git
+    url: https://github.com/singularityos-lab/singularity-desktop.git
+    commit: b3fb0b389bf9b74c4ed3366c33a3d8278071923d   
+commands:
+  - cd /sources/singularity-desktop/singularity-desktop && git submodule update --init --recursive
+  - meson setup build --prefix=/usr -Dapps=core -Dinstaller=false
+  - ninja -C build
+  - ninja -C build install
+  - meson setup subprojects/labwc/build subprojects/labwc --prefix=/usr --libdir=lib --buildtype=release -Dxwayland=enabled --force-fallback-for=wlroots-0.20
+  - ninja -C subprojects/labwc/build
+  - ninja -C subprojects/labwc/build install
