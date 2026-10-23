@@ -4,4 +4,4 @@ commands:
   # Make init.d scripts executable
   - chmod +x /usr/share/init.d/*
   - systemctl enable oomd.service
-  - rm /usr/lib/*/gnome-software/plugins-*/libgs_plugin_packagekit.so
+  - rm -f /usr/lib/*/gnome-software/plugins-*/libgs_plugin_packagekit.so

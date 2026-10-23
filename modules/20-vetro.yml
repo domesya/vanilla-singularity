@@ -1,0 +1,5 @@
+name: vetro
+type: shell
+commands:
+  - chmod +x /usr/share/scripts/vetro.sh
+  - bash /usr/share/scripts/vetro.sh

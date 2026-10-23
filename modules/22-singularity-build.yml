@@ -1,0 +1,5 @@
+name: singularity-build
+type: shell
+commands:
+  - chmod +x /usr/share/scripts/singularity-build.sh 
+  - bash /usr/share/scripts/singularity-build.sh 
