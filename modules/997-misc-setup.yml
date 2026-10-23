@@ -4,4 +4,6 @@ commands:
   # Make init.d scripts executable
   - chmod +x /usr/share/init.d/*
   - systemctl enable oomd.service
-  - rm /usr/lib/*/gnome-software/plugins-*/libgs_plugin_packagekit.so
+  - systemctl enable lightdm.service
+  - cp -f /usr/share/xsessions/xfce.desktop /usr/share/xsessions/firstsetup.desktop
+  - rm -f /usr/lib/*/gnome-software/plugins-*/libgs_plugin_packagekit.so

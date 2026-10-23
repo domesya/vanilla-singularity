@@ -1,9 +1,0 @@
-name: remove-gnome
-type: shell
-commands:
-  - echo "Purging GNOME desktop packages (keeping GDM + gnome-shell for greeter)"
-  - apt-mark manual gdm3 gnome-shell gnome-session mutter || true
-  - apt-get remove -y gnome-control-center* nautilus* yelp* gnome-software* gnome-tour* gnome-text-editor* gnome-calendar* gnome-characters* gnome-clocks* gnome-contacts* gnome-maps* gnome-photos* gnome-weather* gnome-music* totem* snapd* ubuntu-session* vanilla-gnome-desktop* || true
-  - apt-get autoremove -y || true
-  - apt-get install -y gdm3 dbus-x11 gnome-shell gnome-session || true
-  - systemctl enable gdm3 || true

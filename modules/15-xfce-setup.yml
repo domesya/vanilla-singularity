@@ -1,0 +1,10 @@
+name: xfce-setup
+type: apt 
+sources: 
+  - packages:
+      - xorg
+      - xfce4
+      - xfce4-goodies
+      - mate-polkit
+      - lightdm 
+      - lightdm-gtk-greeter

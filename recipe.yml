@@ -71,9 +71,9 @@ stages:
           - modules/00-vanilla-migration.yml
           - modules/03-fswarn.yml
           - modules/10-vanilla-abroot-rollback-notifier.yml
+          - modules/15-xfce-setup.yml
           - modules/18-libs-extra.yml
           - modules/20-install-cpak.yml
-          - modules/23-remove-gnome.yml
           - modules/50-install-debs.yml
           - modules/50-laptop-goodies.yml
           - modules/60-media.yml
@@ -81,6 +81,7 @@ stages:
           - modules/80-set-image-abroot-config.yml
           - modules/100-accessibility.yml
           - modules/110-fonts.yml
+          - modules/121-disable-ssh-daemon.yml
           - modules/130-plymouth.yml
           - modules/131-plymouth-theme-vanilla.yml
           - modules/140-password.yml
