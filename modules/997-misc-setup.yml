@@ -5,7 +5,7 @@ commands:
   - chmod +x /usr/share/init.d/*
   - systemctl enable oomd.service
   - systemctl enable greetd.service
-  - printf '[Desktop Entry]\nName=FirstSetup\nComment=This session provides a First Setup interface\nExec=/usr/bin/singularity-labwc-session\nType=Application\nDesktopNames=SINGULARITY\nNoDisplay=true\n' > /usr/share/wayland-sessions/firstsetup.desktop
+  - printf '[Desktop Entry]\nName=FirstSetup\nComment=This session provides a First Setup interface\nExec=/usr/bin/singularity-labwc-session\nType=Application\nDesktopNames=Singularity\nNoDisplay=true\n' > /usr/share/wayland-sessions/firstsetup.desktop
   - mkdir -p /etc/systemd/user/graphical-session.target.wants/
   - ln -s /usr/lib/systemd/user/vso-tasks-rotation.service /etc/systemd/user/graphical-session.target.wants/
   - ln -s /usr/lib/systemd/user/abroot-rollback-notifier.service /etc/systemd/user/graphical-session.target.wants/
