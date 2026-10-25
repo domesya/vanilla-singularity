@@ -113,4 +113,5 @@ sources:
       - libxcb-present-dev
       - cmake
       - cups
-
+      - cups-common
+      - libcups2-dev
