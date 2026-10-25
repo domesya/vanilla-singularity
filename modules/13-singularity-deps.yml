@@ -115,3 +115,6 @@ sources:
       - cups
       - cups-common
       - libcups2-dev
+      - libcrypt-dev
+      - libglu1-mesa-dev
+      - libfido2-dev
