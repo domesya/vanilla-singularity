@@ -1,11 +1,13 @@
-name: singularity-desktop
+name: singularity-setup
 type: shell
 sources:
   - type: git
     url: https://github.com/singularityos-lab/singularity-desktop.git
+    branch: master
     commit: b3fb0b389bf9b74c4ed3366c33a3d8278071923d   
 commands:
-  - cd /sources/singularity-desktop/singularity-desktop && git submodule update --init --recursive
+  - cd /sources/singularity-setup/singularity-desktop
+  - git submodule update --init --recursive
   - meson setup build --prefix=/usr -Dapps=core -Dinstaller=false
   - ninja -C build
   - ninja -C build install
