@@ -1,4 +1,4 @@
-name: singularity-setup
+name: singularity-deps
 type: apt
 sources:
   - packages:
