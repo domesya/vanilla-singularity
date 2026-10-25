@@ -29,11 +29,6 @@ stages:
       - name: init-setup
         type: shell
         commands:
-          - lpkg --unlock
-          - apt-get update
-      - name: init-setup
-        type: shell
-        commands:
           - echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"' > /etc/environment
           - sed -i '4,10d' /etc/profile
           - apt update
