@@ -71,7 +71,6 @@ stages:
           - modules/14-get-vetro.yml
           - modules/15-singularity-setup.yml
           - modules/18-libs-extra.yml
-          - modules/20-first-setup-user.yml
           - modules/20-install-cpak.yml
           - modules/50-install-debs.yml
           - modules/50-laptop-goodies.yml
