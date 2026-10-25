@@ -8,5 +8,4 @@ sources:
       - btop
       - fastfetch
       - zoxide
-      - blueman
       - network-manager-gnome
