@@ -3,6 +3,10 @@ type: apt
 sources:
   - packages:
       - eza
+      - bat
+      - 7zip
+      - zip
+      - micro
       - zsh
       - fish
       - oomd
