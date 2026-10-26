@@ -4,7 +4,7 @@ sources:
   - type: git
     url: https://github.com/singularityos-lab/singularity-desktop.git
     branch: master
-    commit: b3fb0b389bf9b74c4ed3366c33a3d8278071923d   
+    commit: df5e873ab71dad37f0422976d231a6f2f467c124   
 commands:
   - cd /sources/singularity-setup/singularity-desktop
   - git submodule update --init --recursive
