@@ -112,7 +112,10 @@ sources:
       - libxcb-dri3-dev
       - libxcb-present-dev
       - cmake
+      # cups
       - cups
+      - cups-pk-helper
+      - bluez-cups
       - cups-common
       - libcups2-dev
       - libcrypt-dev
